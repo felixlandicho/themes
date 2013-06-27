@@ -1,4 +1,4 @@
-kohana-themes
+Kohana Themes
 =============
 
 Simple Kohana templating module

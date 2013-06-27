@@ -11,9 +11,9 @@ Themes::$_config = Kohana::$config->load('themes');
 // Check if the directory exist
 if ( ! is_dir(Themes::$_config->directory))
 {
-	throw new Kohana_Exception(':folder folder does not exist', array(
-        ':folder' => Themes::$_config->directory,
-    ));
+	throw new Kohana_Exception(':folder folder does not exist. Move the templates folder from this module to the root.', array(
+		':folder' => Themes::$_config->directory,
+	));
 }
 
 // Define the template path for easy access
@@ -33,7 +33,7 @@ Themes::load();
 Route::set('media', '<folder>/<file>',
 	array(
 		'file' => '.+',
-		'folder' => 'media|static',
+		'folder' => 'media',
 	))
 	->defaults(array(
 		'controller' => 'Template',
